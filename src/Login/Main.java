@@ -11,7 +11,7 @@ public class Main extends JFrame {
 
     public Main(){
         setTitle("Login Window");
-        setSize(400,300);
+        setSize(400,400);
         setResizable(false);
         //setLocation(700,700);
         setLocationRelativeTo(null);
@@ -39,27 +39,27 @@ public class Main extends JFrame {
         OkButton.setLocation(getWidth()-310,getHeight()-100);
         Login.setLocation(getWidth()-300,getHeight()-220);
         Password.setLocation(getWidth()-300,getHeight()-180);
-        Login.setLocation(getWidth()-250,getHeight()-220);
-        Password.setLocation(getWidth()-250,getHeight()-180);
+        LoginUser.setLocation(getWidth()-250,getHeight()-220);
+        PasswordUser.setLocation(getWidth()-250,getHeight()-180);
         panel.setLayout(null);
         panel.add(Close);
         panel.add(OkButton);
         panel.add(Login);
         panel.add(Password);
-        panel.add(Login);
-        panel.add(Password);
+        panel.add(LoginUser);
+        panel.add(PasswordUser);
         Close.setToolTipText("Close Program.");
         OkButton.setToolTipText("Login.");
-        Login.setToolTipText("Give your login.");
-        Password.setToolTipText("Give your password.");
+        LoginUser.setToolTipText("Give your login.");
+        PasswordUser.setToolTipText("Give your password.");
         this.getContentPane().add(panel);
         Close.addActionListener(new Close());
         OkButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                String user = Login.getText();
-                String pass = Password.getText();
+                String user = LoginUser.getText();
+                String pass = PasswordUser.getText();
                 if(user.equals("admin") && pass.equals("admin")) {
                     System.out.print("Correct");
                 }
