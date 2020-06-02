@@ -5,29 +5,28 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("serial")
 public class Main extends JFrame {
 
-
-    JPanel panel = new JPanel();
 
     public Main(){
         setTitle("Login Window");
         setSize(400,300);
-        setResizable(true);
+        setResizable(false);
         //setLocation(700,700);
         setLocationRelativeTo(null);
         initComponents();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+    JPanel panel = new JPanel();
 
     public void initComponents()
     {
-
-        JButton  Close = new JButton ("Close");
-        JButton  OkButton = new JButton ("OK");
-        JLabel  Login= new JLabel("Login: ");
-        JLabel  Password = new JLabel("Password: ");
+        JButton Close = new JButton ("Close");
+        JButton OkButton = new JButton ("OK");
+        JLabel Login= new JLabel("Login: ");
+        JLabel Password = new JLabel("Password: ");
         JTextField LoginUser = new JTextField(6);
         JPasswordField PasswordUser = new JPasswordField(6);
         Close.setSize(90, 30);
@@ -49,10 +48,10 @@ public class Main extends JFrame {
         panel.add(Password);
         panel.add(Login);
         panel.add(Password);
-        Close.setToolTipText("Zamknij Program.");
-        OkButton.setToolTipText("Zaloguj się.");
-        Login.setToolTipText("Podaj swój login.");
-        Password.setToolTipText("Podaj swoje hasło.");
+        Close.setToolTipText("Close Program.");
+        OkButton.setToolTipText("Login.");
+        Login.setToolTipText("Give your login.");
+        Password.setToolTipText("Give your password.");
         this.getContentPane().add(panel);
         Close.addActionListener(new Close());
         OkButton.addActionListener(new ActionListener() {
@@ -67,9 +66,7 @@ public class Main extends JFrame {
                 else {
                     System.out.print("Error");
                 }
-
             }
-
         });
     }
     private class Close implements ActionListener
@@ -87,9 +84,7 @@ public class Main extends JFrame {
                 Toolkit t = Toolkit.getDefaultToolkit();
                 Dimension d = t.getScreenSize();
                 LoginWindow.setLocation((d.width/4), (d.height/4));
-
             }
         });
     }
-
 }
